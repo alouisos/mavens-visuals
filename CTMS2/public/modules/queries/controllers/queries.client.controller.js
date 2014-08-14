@@ -9,11 +9,11 @@ angular.module('queries').controller('QueriesController', ['$scope', '$statePara
 		$scope.create = function() {
 			// Create new Query object
 			var query = new Queries ({
-				patientID: this.patientID,
+				patientID: this.patientID.toUpperCase(),
 				patientSite: this.patientSite, 
 				hasResponse: this.hasResponse, 
 				hasResponseDate: Date.now
-				
+
 			});
 
 			// Redirect after save
