@@ -15,6 +15,8 @@
 			</small>
 			<h4 class="list-group-item-heading" data-ng-bind="query.patientID"></h4>
             <h4 class="list-group-item-heading" data-ng-bind="query.patientSite"></h4>
+            <h5 style="color: red" ng-if = "query.hasResponse === false"> Has not Responded yet</h5>
+            <h5 style="color: green" ng-if = "query.hasResponse === true"> Has Responded </h5>  
 
         </a>
     </div>
