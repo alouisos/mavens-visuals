@@ -13,6 +13,7 @@ angular.module('queries').controller('QueriesController', ['$scope', '$statePara
 				patientSite: this.patientSite, 
 				hasResponse: this.hasResponse, 
 				hasResponseDate: Date.now
+				
 			});
 
 			// Redirect after save

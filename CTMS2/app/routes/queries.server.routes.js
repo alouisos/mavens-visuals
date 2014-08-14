@@ -11,9 +11,12 @@ module.exports = function(app) {
 
 	app.route('/queries/:queryId')
 		.get(queries.read)
-		.put(users.requiresLogin, queries.hasAuthorization, queries.update)
-		.delete(users.requiresLogin, queries.hasAuthorization, queries.delete);
+		.put(users.requiresLogin, queries.update)
+		.delete(users.requiresLogin, queries.delete);
 
 	// Finish by binding the Query middleware
 	app.param('queryId', queries.queryByID);
 };
+
+
+//		.put(users.requiresLogin, queries.hasAuthorization, queries.update)
