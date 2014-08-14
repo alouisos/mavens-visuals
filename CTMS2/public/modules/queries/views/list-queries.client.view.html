@@ -1,0 +1,23 @@
+<section data-ng-controller="QueriesController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Queries</h1>
+                <input class="search" type="text" ng-model="query.patientID" placeholder="Search by Patient ID...">
+
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="query in queries | filter: query" data-ng-href="#!/queries/{{query._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Created on
+				<span data-ng-bind="query.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="query.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="query.patientID"></h4>
+            <h4 class="list-group-item-heading" data-ng-bind="query.patientSite"></h4>
+
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!queries.$resolved || queries.length">
+    	No Queries yet, why don't you <a href="/#!/queries/create">create one</a>?
+    </div>
+</section>

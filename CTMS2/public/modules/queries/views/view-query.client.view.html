@@ -1,0 +1,40 @@
+<section data-ng-controller="QueriesController" data-ng-init="findOne()">
+	<div class="page-header">
+				<h1 style = "color: #A3C1AD"> Patient ID: </h1> 
+<h1 data-ng-bind="query.patientID"></h1>
+				<h1 style = "color: #A3C1AD"1> Patient Site: </h1> 
+
+				<h1 data-ng-bind="query.patientSite"></h1>
+				
+				<h1 style = "color: #A3C1AD"> Have they responded? </h1>
+							<h1 ng-if = "query.hasResponse === false"> Not Yet</h1>  
+
+								<h1 ng-if = "query.hasResponse === true"> Yes on</h1>  
+								<h1 ng-if="query.hasResponse === true" data-ng-bind="query.hasResponseDate | date:'dd/MM/yyyy'"></h1>
+
+
+	</div>
+	<div class="pull-right" data-ng-show="authentication.user._id == query.user._id">
+		<a class="btn btn-primary" href="/#!/queries">
+			<i class="glyphicon glyphicon-home"></i></a>	
+		<a class="btn btn-primary" href="/#!/queries/create">
+			<i class="glyphicon glyphicon-plus"></i></a>
+		<a class="btn btn-primary" href="/#!/queries/{{query._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+						
+
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="query.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="query.user.displayName"></span>
+		</em>
+	</small>
+</section>

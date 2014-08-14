@@ -1,0 +1,39 @@
+<section data-ng-controller="QueriesController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Query</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="patientID">PatientID</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="query.patientID" id="patientID" class="form-control" placeholder="PatientID" required>
+                    </div>
+
+                <label class="control-label" for="patientSite">PatientSite</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="query.patientSite" id="patientSite" class="form-control" placeholder="Patient Site" required>
+                    </div>
+
+
+                <label class="control-label" for="hasRenponded">Have they Responded to they Query? </label>
+                    <div class="controls">
+
+                           <input type="radio" data-ng-model="query.hasResponse" id="hasResponse"  name="hasResponse" value="true">&nbsp;They Have Responded<br>
+                             <input type="radio" data-ng-model="query.hasResponse" id="hasResponse"  name="hasResponse" value="false">&nbsp;They Have Not Responded Yet
+
+                    
+                    </div>    
+
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
