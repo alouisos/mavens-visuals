@@ -1,0 +1,40 @@
+{
+
+   "name": "Videos",
+   "children": [
+    {
+     "name": "Superwash-Cleeen",
+     "children": [
+      {"name": "VIDEO-0", "size": 4741,   "color": "#25b7c0", "url":  "/video-0"},
+      {"name": "VIDEO-2", "size": 1800, "color": "#25b7c0", "url":  "/video-2"},
+      {"name": "VIDEO-6", "size": 12375, "color": "#25b7c0", "url":   "/video-6"}
+
+     ]
+    },
+    {
+     "name": "Cleeen Extrabrite",
+     "children": [
+      {"name": "VIDEO-5", "size": 1800, "color": "#806d6a", "url":   "/video-5"},
+      {"name": "VIDEO-8", "size": 43342, "color": "#806d6a", "url":   "/video-8"},
+      {"name": "VIDEO-9", "size": 2715, "color": "#806d6a", "url":   "/video-9"}
+      
+     ]
+    }, {
+     "name": "Extrabrite",
+     "children": [
+      {"name": "VIDEO-4", "size": 10605, "color": "#85bf49", "url":   "/video-4"}
+     ]
+    }, 
+    {
+     "name": "Superwash - Extrabrite",
+     "children": [
+            {"name": "VIDEO-7", "size": 12486, "color": "#f1bf6e", "url": "/video-7"}
+
+     ]
+    }
+
+    ]}
+    
+
+ 
+ 
