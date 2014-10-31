@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 /**
  * Module dependencies.
@@ -9,35 +9,68 @@ var mongoose = require('mongoose'),
 /**
  * Query Schema
  */
-var QuerySchema = new Schema({
-	patientID: {
-		type: String,
-		default: '',
-		required: 'Please fill PatientID ',
-		trim: true
-	},
-	patientSite: { 
+var querySchema = new Schema({
+	trialName: { 
 		type: String, 
 		default: '', 
-		required: 'Please fill Patient Site', 
-		trim: true
+		required: 'Please Fill trial Name', 
+		trim: true, 
 	}, 
-	hasResponse: { 
-		type: Boolean, 
-		default: false
+	trialDescription: { 
+		type: String, 
+		default: '', 
+		required: 'Please fill trial description', 
 	}, 
-	hasResponseDate: { 
-		type: Date, 
-		default: Date.now
-	}, 
-	created: {
-		type: Date,
-		default: Date.now
-	},
-	user: {
-		type: Schema.ObjectId,
-		ref: 'User'
-	}
+	followups: [{type: Schema.ObjectId, ref:'Followup'}]
+	// , 
+	// patients:  
+	// 	[{
+	// 		type: Schema.ObjectId, ref: 'Patient'
+	// 	}], 
+	// followups:  
+	// 	[{ 
+	// 		type: Schema.ObjectId, ref: 'Followup'
+	// 	}]
 });
 
-mongoose.model('Query', QuerySchema);
+
+
+// 	patientID: {
+// 		type: String,
+// 		default: '',
+// 		required: 'Please fill PatientID ',
+// 		trim: true
+// 	},
+// 	followups: { 
+// 		type: String, 
+// 		default: 'Followup', 
+// 		required: 'Please fill Followup Event', 
+// 		trim: true, 
+// 		dateExpected: {type: Date, default: false}, 
+// 		response: {Received: {type: Boolean, default: false, date: {type: Date, default: false} }}
+// 	}, 
+// 	hasResponse: { 
+// 		type: Boolean, 
+// 		default: false
+// 	}, 
+// 	hasResponseDate: { 
+// 		type: Date, 
+// 		default: Date.now
+// 	},
+
+	 
+// 	hasfutureDate: { 
+// 		type: Date
+// 	}, 
+
+// 	created: {
+// 		type: Date,
+// 		default: Date.now
+// 	},
+// 	user: {
+// 		type: Schema.ObjectId,
+// 		ref: 'User'
+// 	}
+// });
+
+mongoose.model('Query', querySchema);

@@ -1,5 +1,6 @@
-'use strict';
 
+
+'use strict';
 // Queries controller
 angular.module('queries').controller('QueriesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Queries',
 	function($scope, $stateParams, $location, Authentication, Queries ) {
@@ -9,16 +10,16 @@ angular.module('queries').controller('QueriesController', ['$scope', '$statePara
 		$scope.create = function() {
 			// Create new Query object
 			var query = new Queries ({
-				patientID: this.patientID.toUpperCase(),
-				patientSite: this.patientSite, 
-				hasResponse: this.hasResponse, 
-				hasResponseDate: Date.now
+				trialName: this.trialName,
+				trialDescription: this.trialDescription, 
+			
+
 
 			});
 
 			// Redirect after save
 			query.$save(function(response) {
-				$location.path('queries/' + response._id);
+				$location.path('queries');
 
 				// Clear form fields
 				$scope.name = '';

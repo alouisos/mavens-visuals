@@ -1,19 +1,59 @@
 <section data-ng-controller="QueriesController" data-ng-init="findOne()">
 	<div class="page-header">
-				<h1 style = "color: #A3C1AD"> Patient ID: </h1> 
-<h1 data-ng-bind="query.patientID"></h1>
-				<h1 style = "color: #A3C1AD"1> Patient Site: </h1> 
+				<h4 style = "color: #A3C1AD"> Clinical Trial:  </h4> 
+<h4 data-ng-bind="query.trialName"></h4>
+				<h4 style = "color: #A3C1AD"1> Description: </h4> 
 
-				<h1 data-ng-bind="query.patientSite"></h1>
+				<h4 data-ng-bind="query.trialDescription"></h4>
+
+				 <a class="btn btn-primary" href="/#!/queries/{{query._id}}/patients/create">
+			<i class="glyphicon glyphicon-plus"></i>Add Patient</a><br><br>
+
+				 <a class="btn btn-primary" href="/#!/queries/{{query._id}}/followups/create">
+			<i class="glyphicon glyphicon-plus"></i>Add Follow Up Event</a><br><br>
 				
-				<h1 style = "color: #A3C1AD"> Have they responded? </h1>
+				<!-- <h1 style = "color: #A3C1AD"> Have they responded? </h1>
+
+
+
 							<h1 ng-if = "query.hasResponse === false"> Not Yet</h1>  
 
 								<h1 ng-if = "query.hasResponse === true"> Yes on</h1>  
-								<h1 ng-if="query.hasResponse === true" data-ng-bind="query.hasResponseDate | date:'dd/MM/yyyy'"></h1>
+								<h1 ng-if="query.hasResponse === true" data-ng-bind="query.hasResponseDate | date:'dd/MM/yyyy'"></h1> -->
+<section data-ng-controller="FollowupsController" data-ng-init="find()">
 
+	<section data-ng-controller="PatientsController" data-ng-init="find()">
 
+<table class="table">
+   <tr>
+   <!-- <th> <center><strong> PatientID&nbsp;<a class="btn btn-primary" href="/#!/queries">
+			<i class="glyphicon glyphicon-plus"></i>Add Patient</a>	</strong>  </center> 
+    -->
+			<th> patientID</th>
+		<th data-ng-repeat="followup in followups | toArray | orderBy:'days_from_baseline'">
+			<a data-ng-href="#!/followups/{{followup._id}}"> {{followup.name}}</a> </th> 
+
+     </tr>
+   
+   
+  
+   
+<tr data-ng-repeat="patient in patients">
+			<td><a data-ng-href="#!/patients/{{patient._id}}"> {{patient.patientID}}</a></td>
+			  <td> <center>  <a class="btn btn-primary" href="/#!/queries/create">
+			<i class="glyphicon glyphicon-ok"></i>&nbsp;Received</a> </center> </td> 
+			
+       </tr>
+   
+</section></section>
+  
+	
+  </tr> 
+  
 	</div>
+
+	<section data-ng-controller="QueriesController" data-ng-init="findOne()">
+
 	<div class="pull-right">
 		<a class="btn btn-primary" href="/#!/queries">
 			<i class="glyphicon glyphicon-home"></i></a>	
@@ -31,10 +71,10 @@
 
 	<small>
 		<em class="text-muted">
-			Posted on
+			<!-- Posted on
 			<span data-ng-bind="query.created | date:'mediumDate'"></span>
 			by
-			<span data-ng-bind="query.user.displayName"></span>
+			<span data-ng-bind="query.user.displayName"></span> -->
 		</em>
 	</small>
 </section>

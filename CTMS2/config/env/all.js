@@ -6,7 +6,7 @@ module.exports = {
 		description: 'Cambridge Clinical Trials Unit CTMS',
 		keywords: 'CTMS, cambridge, clinical trials, unit'
 	},
-	port: process.env.PORT || 80,
+	port: process.env.PORT || 8080,
 	templateEngine: 'swig',
 	sessionSecret: 'MEAN',
 	sessionCollection: 'sessions',

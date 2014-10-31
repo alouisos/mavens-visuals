@@ -4,7 +4,11 @@
  */
 var init = require('./config/init')(),
 	config = require('./config/config'),
-	mongoose = require('mongoose');
+	mongoose = require('mongoose'),
+	moment = require('moment');
+
+var sugar = require('sugar');
+
 
 /**
  * Main application entry file.

@@ -17,6 +17,14 @@ angular.module('queries').config(['$stateProvider',
 			url: '/queries/:queryId',
 			templateUrl: 'modules/queries/views/view-query.client.view.html'
 		}).
+		state('createfollowup_trial_specific', {
+			url: '/queries/:queryId/followups/create',
+			templateUrl: 'modules/followups/views/create-followup.client.view.html'
+		}).
+		state('createPatient_trial_specific', {
+			url: '/queries/:queryId/patients/create',
+			templateUrl: 'modules/patients/views/create-patient.client.view.html'
+		}).
 		state('editQuery', {
 			url: '/queries/:queryId/edit',
 			templateUrl: 'modules/queries/views/edit-query.client.view.html'

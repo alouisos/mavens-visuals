@@ -1,26 +1,34 @@
 <section data-ng-controller="QueriesController" data-ng-init="find()">
     <div class="page-header">
-        <h1>Queries</h1><a class="btn btn-primary" href="/#!/queries/create">
-            <i class="glyphicon glyphicon-plus"></i>&nbsp;Add a Query</a>    
-              or  <input class="search" type="text" ng-model="query.patientID" placeholder="Search by Patient ID...">
+        <h1>Clinical Trials CTMS List</h1><br><a class="btn btn-primary" href="/#!/queries/create">
+            <i class="glyphicon glyphicon-plus"></i>&nbsp;Add a Clinical Trial</a>    
+             &nbsp; or  &nbsp;<input class="search" type="text" ng-model="query.trialName" placeholder="Search by Trial Name...">
 
     </div>
     <div class="list-group">
+       <!--  <a data ng-repeat="query in queries | filter: query" data-ng-href = "#!/queries/{{query._id}}" class="list-group-item"> -->
+
+            <a data ng-repeat = "query in queries | filter: query" data-ng-href = "#!/queries/{{query._id}}" class="list-group-item-text btn btn-primary" href="#">  <span data-ng-bind="query.trialName"></span></a>
+</a>
+<br><br>
+<!-- 
         <a data-ng-repeat="query in queries | filter: query" data-ng-href="#!/queries/{{query._id}}" class="list-group-item">
 			<small class="list-group-item-text">
 				Created on
 				<span data-ng-bind="query.created | date:'medium'"></span>
 				by
 				<span data-ng-bind="query.user.displayName"></span>
+
 			</small>
 			<h4 class="list-group-item-heading" data-ng-bind="query.patientID"></h4>
             <h4 class="list-group-item-heading" data-ng-bind="query.patientSite"></h4>
+             <h4 class="list-group-item-heading" data-ng-bind="query.hasfutureDate | date:'medium'"></h4>
             <h5 style="color: red" ng-if = "query.hasResponse === false"> Has not Responded yet</h5>
             <h5 style="color: green" ng-if = "query.hasResponse === true"> Has Responded </h5>  
 
-        </a>
+        </a> -->
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!queries.$resolved || queries.length">
-    	No Queries yet, why don't you <a href="/#!/queries/create">create one</a>?
+    	No Clinical Trials CTMSed yet, why don't you <a href="/#!/queries/create">create one</a>?
     </div>
 </section>
